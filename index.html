@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Team PK AI — Official Apps</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #010410;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Glow orbs */
+        .glow-1 {
+            position: fixed; top: -100px; left: -100px;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(168,0,255,0.3), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none; z-index: 0;
+        }
+        .glow-2 {
+            position: fixed; bottom: -100px; right: -100px;
+            width: 350px; height: 350px;
+            background: radial-gradient(circle, rgba(0,240,255,0.25), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none; z-index: 0;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 20px 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 30px 0 20px;
+        }
+        .logo-box {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, #A800FF, #00F0FF);
+            border-radius: 24px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px;
+            box-shadow: 0 0 40px rgba(168,0,255,0.4);
+            font-size: 36px;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(90deg, #A800FF, #00F0FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header p {
+            color: #9CA3AF;
+            font-size: 13px;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+        .badge {
+            display: inline-block;
+            background: linear-gradient(90deg, rgba(168,0,255,0.2), rgba(0,240,255,0.2));
+            border: 1px solid rgba(0,240,255,0.3);
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #00F0FF;
+            margin-top: 12px;
+            letter-spacing: 1px;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #fff;
+            margin: 28px 0 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(168,0,255,0.4), transparent);
+        }
+
+        /* App Card */
+        .app-card {
+            background: rgba(13,16,38,0.8);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 20px;
+            padding: 18px;
+            margin-bottom: 14px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .app-card:active {
+            transform: scale(0.98);
+            border-color: rgba(0,240,255,0.3);
+        }
+        .app-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .app-icon {
+            width: 56px; height: 56px;
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        .app-info { flex: 1; }
+        .app-name {
+            font-size: 16px;
+            font-weight: 800;
+            color: #fff;
+        }
+        .app-desc {
+            font-size: 11px;
+            color: #9CA3AF;
+            margin-top: 2px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        .app-tags {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 3px 8px;
+            font-size: 9px;
+            font-weight: 700;
+            color: #9CA3AF;
+        }
+
+        /* Download Button */
+        .btn-download {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 14px;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            margin-top: 14px;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-download:active { transform: scale(0.97); }
+        .btn-active {
+            background: linear-gradient(135deg, #A800FF, #7000FF);
+            box-shadow: 0 4px 20px rgba(168,0,255,0.4);
+        }
+        .btn-coming {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #6B7280;
+            cursor: default;
+        }
+        .btn-icon { font-size: 18px; }
+
+        /* Status badges */
+        .status-live {
+            display: inline-flex; align-items: center; gap: 4px;
+            background: rgba(16,185,129,0.15);
+            border: 1px solid rgba(16,185,129,0.3);
+            border-radius: 8px;
+            padding: 3px 8px;
+            font-size: 9px;
+            font-weight: 700;
+            color: #10B981;
+        }
+        .status-live::before {
+            content: '';
+            width: 6px; height: 6px;
+            background: #10B981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        .status-soon {
+            display: inline-flex; align-items: center; gap: 4px;
+            background: rgba(245,158,11,0.15);
+            border: 1px solid rgba(245,158,11,0.3);
+            border-radius: 8px;
+            padding: 3px 8px;
+            font-size: 9px;
+            font-weight: 700;
+            color: #F59E0B;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0 40px;
+            color: #6B7280;
+            font-size: 11px;
+        }
+        .footer a {
+            color: #A800FF;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .footer .heart { color: #EF4444; }
+
+        /* Version badge */
+        .version {
+            background: rgba(168,0,255,0.1);
+            border: 1px solid rgba(168,0,255,0.2);
+            border-radius: 6px;
+            padding: 2px 6px;
+            font-size: 9px;
+            font-weight: 700;
+            color: #A800FF;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="glow-1"></div>
+    <div class="glow-2"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-box">🚀</div>
+            <h1>Team PK AI</h1>
+            <p>Premium AI-Powered Android Applications</p>
+            <div class="badge">✦ OFFICIAL APPS HUB ✦</div>
+        </div>
+
+        <!-- Available Now -->
+        <div class="section-title">✅ Available Now</div>
+
+        <!-- PowerCut Editor -->
+        <div class="app-card">
+            <div class="app-top">
+                <div class="app-icon" style="background: linear-gradient(135deg, #FF6B35, #E64A19);">🎬</div>
+                <div class="app-info">
+                    <div class="app-name">PowerCut Editor <span class="version">v2.1.0</span></div>
+                    <div class="app-desc">CapCut-Level Professional Video Editor with 30+ effects, multi-layer timeline, slow-mo & more</div>
+                </div>
+            </div>
+            <div class="app-tags">
+                <span class="tag">Video Editor</span>
+                <span class="tag">CapCut Level</span>
+                <span class="tag">Kotlin</span>
+                <span class="status-live">LIVE</span>
+            </div>
+            <a href="https://github.com/Salmanlaghari/PowerCut-Editor/releases/download/v2.1.0/app-release.apk" class="btn-download btn-active">
+                <span class="btn-icon">⬇️</span> Download APK
+            </a>
+        </div>
+
+        <!-- SpellType Keyboard -->
+        <div class="app-card">
+            <div class="app-top">
+                <div class="app-icon" style="background: linear-gradient(135deg, #7C5CFF, #A800FF);">⌨️</div>
+                <div class="app-info">
+                    <div class="app-name">SpellType Keyboard</div>
+                    <div class="app-desc">Magic keyboard with stylish text, Unicode art, emoji patterns & AI-powered typing</div>
+                </div>
+            </div>
+            <div class="app-tags">
+                <span class="tag">Keyboard</span>
+                <span class="tag">IME</span>
+                <span class="tag">Unicode</span>
+                <span class="tag">AI</span>
+                <span class="status-live">LIVE</span>
+            </div>
+            <a href="https://github.com/Salmanlaghari/SpellType-Keyboard/releases" class="btn-download btn-active">
+                <span class="btn-icon">⬇️</span> Download APK
+            </a>
+        </div>
+
+        <!-- AI Finder -->
+        <div class="app-card">
+            <div class="app-top">
+                <div class="app-icon" style="background: linear-gradient(135deg, #00F0FF, #0072FF);">🔍</div>
+                <div class="app-info">
+                    <div class="app-name">AI Finder</div>
+                    <div class="app-desc">AI-powered search aggregator — discover 1000+ AI tools in a beautiful cyberpunk interface</div>
+                </div>
+            </div>
+            <div class="app-tags">
+                <span class="tag">AI Tools</span>
+                <span class="tag">Search</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Compose</span>
+                <span class="status-live">LIVE</span>
+            </div>
+            <a href="https://github.com/Salmanlaghari/ai-finder-app/releases" class="btn-download btn-active">
+                <span class="btn-icon">⬇️</span> Download APK
+            </a>
+        </div>
+
+        <!-- PK AI -->
+        <div class="app-card">
+            <div class="app-top">
+                <div class="app-icon" style="background: linear-gradient(135deg, #A800FF, #7000FF);">🤖</div>
+                <div class="app-info">
+                    <div class="app-name">PK AI</div>
+                    <div class="app-desc">Premium AI Super App — 9 AI models, generative studio, voice AI & more in one app</div>
+                </div>
+            </div>
+            <div class="app-tags">
+                <span class="tag">AI Chat</span>
+                <span class="tag">Multi-Model</span>
+                <span class="tag">Voice AI</span>
+                <span class="status-live">LIVE</span>
+            </div>
+            <a href="https://github.com/Salmanlaghari/PK-AI/releases" class="btn-download btn-active">
+                <span class="btn-icon">⬇️</span> Download APK
+            </a>
+        </div>
+
+        <!-- Coming Soon -->
+        <div class="section-title">🔜 Coming Soon</div>
+
+        <!-- Rising Flix -->
+        <div class="app-card">
+            <div class="app-top">
+                <div class="app-icon" style="background: linear-gradient(135deg, #E91E63, #9C27B0);">📺</div>
+                <div class="app-info">
+                    <div class="app-name">Rising Flix</div>
+                    <div class="app-desc">Premium streaming — Movies, Dramas, Sports, Cartoons with built-in ExoPlayer</div>
+                </div>
+            </div>
+            <div class="app-tags">
+                <span class="tag">Streaming</span>
+                <span class="tag">Movies</span>
+                <span class="tag">Sports</span>
+                <span class="status-soon">COMING SOON</span>
+            </div>
+            <button class="btn-download btn-coming" disabled>
+                <span class="btn-icon">🔜</span> Coming Soon
+            </button>
+        </div>
+
+        <!-- ArtType Keyboard -->
+        <div class="app-card">
+            <div class="app-top">
+                <div class="app-icon" style="background: linear-gradient(135deg, #FF9800, #F44336);">🎨</div>
+                <div class="app-info">
+                    <div class="app-name">ArtType Keyboard</div>
+                    <div class="app-desc">AI keyboard that transforms comments into visual art with frames, shapes & emoji patterns</div>
+                </div>
+            </div>
+            <div class="app-tags">
+                <span class="tag">Keyboard</span>
+                <span class="tag">Art</span>
+                <span class="tag">Social Media</span>
+                <span class="status-soon">COMING SOON</span>
+            </div>
+            <button class="btn-download btn-coming" disabled>
+                <span class="btn-icon">🔜</span> Coming Soon
+            </button>
+        </div>
+
+        <!-- FilmHub Premium -->
+        <div class="app-card">
+            <div class="app-top">
+                <div class="app-icon" style="background: linear-gradient(135deg, #FF5722, #795548);">🎬</div>
+                <div class="app-info">
+                    <div class="app-name">FilmHub Premium</div>
+                    <div class="app-desc">8K Movies, Dramas & Live Sports with Ultra Premium Dashboard</div>
+                </div>
+            </div>
+            <div class="app-tags">
+                <span class="tag">Movies</span>
+                <span class="tag">8K</span>
+                <span class="tag">Live Sports</span>
+                <span class="status-soon">COMING SOON</span>
+            </div>
+            <button class="btn-download btn-coming" disabled>
+                <span class="btn-icon">🔜</span> Coming Soon
+            </button>
+        </div>
+
+        <!-- Click Browser -->
+        <div class="app-card">
+            <div class="app-top">
+                <div class="app-icon" style="background: linear-gradient(135deg, #4CAF50, #00BCD4);">🌐</div>
+                <div class="app-info">
+                    <div class="app-name">Click Browser</div>
+                    <div class="app-desc">The Future of Mobile Browsing — Simple, Developer & Hack modes in one premium browser</div>
+                </div>
+            </div>
+            <div class="app-tags">
+                <span class="tag">Browser</span>
+                <span class="tag">Privacy</span>
+                <span class="tag">3 Modes</span>
+                <span class="status-soon">COMING SOON</span>
+            </div>
+            <button class="btn-download btn-coming" disabled>
+                <span class="btn-icon">🔜</span> Coming Soon
+            </button>
+        </div>
+
+        <!-- Pulse Music -->
+        <div class="app-card">
+            <div class="app-top">
+                <div class="app-icon" style="background: linear-gradient(135deg, #3F51B5, #2196F3);">🎵</div>
+                <div class="app-info">
+                    <div class="app-name">Pulse Music Player AI</div>
+                    <div class="app-desc">AI-powered music player with smart recommendations & premium audio experience</div>
+                </div>
+            </div>
+            <div class="app-tags">
+                <span class="tag">Music</span>
+                <span class="tag">AI</span>
+                <span class="tag">Player</span>
+                <span class="status-soon">COMING SOON</span>
+            </div>
+            <button class="btn-download btn-coming" disabled>
+                <span class="btn-icon">🔜</span> Coming Soon
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Developed with <span class="heart">❤️</span> by <a href="https://github.com/Salmanlaghari">Team PK AI</a></p>
+            <p style="margin-top: 6px;">© 2026 Team PK AI — All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+</html>
