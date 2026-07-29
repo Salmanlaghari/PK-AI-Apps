@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Team PK AI — Official Apps</title>
+    <meta name="description" content="Team PK AI - Premium AI-Powered Android Applications. Download PowerCut Editor, SpellType Keyboard, AI Finder, PK AI and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -98,7 +99,359 @@
             background: linear-gradient(90deg, rgba(168,0,255,0.4), transparent);
         }
 
-        /* App Card */
+        /* ===== POWERCUT FEATURED SECTION ===== */
+        .featured-card {
+            background: linear-gradient(135deg, rgba(255,107,53,0.08), rgba(230,74,25,0.04));
+            border: 1px solid rgba(255,107,53,0.2);
+            border-radius: 24px;
+            padding: 0;
+            margin-bottom: 14px;
+            overflow: hidden;
+        }
+        .featured-header {
+            padding: 20px 20px 0;
+        }
+        .featured-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+        .featured-icon {
+            width: 64px; height: 64px;
+            background: linear-gradient(135deg, #FF6B35, #E64A19);
+            border-radius: 18px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 8px 24px rgba(255,107,53,0.3);
+        }
+        .featured-name {
+            font-size: 20px;
+            font-weight: 900;
+        }
+        .featured-version {
+            background: rgba(255,107,53,0.2);
+            border: 1px solid rgba(255,107,53,0.3);
+            border-radius: 8px;
+            padding: 3px 8px;
+            font-size: 10px;
+            font-weight: 700;
+            color: #FF6B35;
+            display: inline-block;
+            margin-top: 4px;
+        }
+        .featured-desc {
+            font-size: 12px;
+            color: #9CA3AF;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        /* Screenshot Carousel */
+        .screenshots-wrapper {
+            padding: 0 20px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .screenshots-wrapper::-webkit-scrollbar { display: none; }
+        .screenshots-row {
+            display: flex;
+            gap: 10px;
+            padding: 4px 0 14px;
+        }
+        .screenshot {
+            width: 140px;
+            min-width: 140px;
+            height: 280px;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+        .screenshot-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 10px;
+            position: relative;
+        }
+        /* Screen 1 - Home/Timeline */
+        .scr-home {
+            background: linear-gradient(180deg, #1a0a2e 0%, #0d0520 100%);
+        }
+        .scr-home .scr-topbar {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .scr-home .scr-title { font-size: 10px; font-weight: 700; color: #FF6B35; }
+        .scr-home .scr-dots { font-size: 12px; color: #666; }
+        .scr-home .scr-timeline {
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .scr-home .scr-track {
+            width: 100%;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            padding: 0 6px;
+            font-size: 7px;
+            font-weight: 600;
+        }
+        .scr-home .scr-track-vid { background: linear-gradient(90deg, #FF6B35, #E64A19); color: #fff; }
+        .scr-home .scr-track-aud { background: linear-gradient(90deg, #7C5CFF, #A800FF); color: #fff; }
+        .scr-home .scr-track-txt { background: linear-gradient(90deg, #00F0FF, #0072FF); color: #fff; }
+        .scr-home .scr-track-fx { background: linear-gradient(90deg, #FFD700, #FF9800); color: #000; }
+        .scr-home .scr-playhead {
+            width: 2px;
+            height: 100%;
+            background: #FF6B35;
+            position: absolute;
+            left: 50%;
+            top: 0;
+        }
+        .scr-home .scr-controls {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 8px;
+            font-size: 12px;
+            color: #999;
+        }
+        .scr-home .scr-preview {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #2a1a4e, #1a0a3e);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .scr-home .scr-preview::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,107,53,0.2), rgba(168,0,255,0.2));
+        }
+
+        /* Screen 2 - Effects */
+        .scr-effects {
+            background: linear-gradient(180deg, #0a1628 0%, #050d1a 100%);
+        }
+        .scr-effects .scr-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            width: 100%;
+            margin-top: 8px;
+        }
+        .scr-effects .scr-fx-item {
+            aspect-ratio: 1;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .scr-effects .scr-label {
+            font-size: 9px;
+            font-weight: 700;
+            color: #FF6B35;
+            text-align: center;
+            margin-bottom: 4px;
+        }
+
+        /* Screen 3 - Export */
+        .scr-export {
+            background: linear-gradient(180deg, #0a0a2e 0%, #050518 100%);
+        }
+        .scr-export .scr-format {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        .scr-export .scr-format-item {
+            width: 100%;
+            padding: 8px 10px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 8px;
+            font-weight: 600;
+        }
+        .scr-export .scr-format-item.active {
+            border-color: #FF6B35;
+            background: rgba(255,107,53,0.1);
+        }
+        .scr-export .scr-quality {
+            width: 100%;
+            display: flex;
+            gap: 4px;
+            margin-top: 6px;
+        }
+        .scr-export .scr-q {
+            flex: 1;
+            padding: 6px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 7px;
+            font-weight: 700;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .scr-export .scr-q.active {
+            background: rgba(255,107,53,0.15);
+            border-color: #FF6B35;
+            color: #FF6B35;
+        }
+        .scr-export .scr-export-btn {
+            width: 100%;
+            padding: 10px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #FF6B35, #E64A19);
+            text-align: center;
+            font-size: 10px;
+            font-weight: 800;
+            color: #fff;
+            margin-top: 10px;
+            box-shadow: 0 4px 16px rgba(255,107,53,0.4);
+        }
+
+        /* Screen 4 - Speed */
+        .scr-speed {
+            background: linear-gradient(180deg, #1a0a0a 0%, #0d0505 100%);
+        }
+        .scr-speed .scr-speed-circle {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            border: 3px solid #FF6B35;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 900;
+            color: #FF6B35;
+            margin: 10px 0;
+            box-shadow: 0 0 20px rgba(255,107,53,0.3);
+        }
+        .scr-speed .scr-speed-labels {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 7px;
+            color: #666;
+            margin-top: 6px;
+        }
+        .scr-speed .scr-speed-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 2px;
+            margin-top: 4px;
+            position: relative;
+        }
+        .scr-speed .scr-speed-fill {
+            position: absolute;
+            left: 0; top: 0;
+            height: 100%;
+            width: 30%;
+            background: linear-gradient(90deg, #FF6B35, #FF9800);
+            border-radius: 2px;
+        }
+        .scr-speed .scr-speed-dot {
+            position: absolute;
+            top: -4px;
+            left: 28%;
+            width: 12px; height: 12px;
+            background: #FF6B35;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(255,107,53,0.5);
+        }
+
+        .screenshot-label {
+            position: absolute;
+            bottom: 8px;
+            left: 0; right: 0;
+            text-align: center;
+            font-size: 8px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Feature pills in featured card */
+        .featured-features {
+            padding: 0 20px 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .feat-pill {
+            background: rgba(255,107,53,0.08);
+            border: 1px solid rgba(255,107,53,0.15);
+            border-radius: 10px;
+            padding: 5px 10px;
+            font-size: 9px;
+            font-weight: 700;
+            color: #FF6B35;
+        }
+
+        /* Changelog in featured */
+        .featured-changelog {
+            padding: 0 20px 16px;
+        }
+        .changelog-title {
+            font-size: 11px;
+            font-weight: 800;
+            color: #FF6B35;
+            margin-bottom: 8px;
+        }
+        .changelog-items {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .changelog-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            font-size: 10px;
+            color: #ccc;
+        }
+        .changelog-item .ci-icon {
+            font-size: 10px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* Download button for featured */
+        .featured-download {
+            padding: 0 20px 20px;
+        }
+
+        /* ===== APP CARD (other apps) ===== */
         .app-card {
             background: rgba(13,16,38,0.8);
             border: 1px solid rgba(255,255,255,0.06);
@@ -177,6 +530,10 @@
             background: linear-gradient(135deg, #A800FF, #7000FF);
             box-shadow: 0 4px 20px rgba(168,0,255,0.4);
         }
+        .btn-featured {
+            background: linear-gradient(135deg, #FF6B35, #E64A19);
+            box-shadow: 0 4px 20px rgba(255,107,53,0.4);
+        }
         .btn-coming {
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.1);
@@ -243,6 +600,35 @@
             color: #A800FF;
             margin-left: 6px;
         }
+
+        /* New badge */
+        .new-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B35, #FF9800);
+            color: #fff;
+            font-size: 8px;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        /* File info row */
+        .file-info {
+            display: flex;
+            gap: 12px;
+            padding: 0 20px 10px;
+            flex-wrap: wrap;
+        }
+        .file-info-item {
+            font-size: 9px;
+            color: #9CA3AF;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .file-info-item strong { color: #FF6B35; }
     </style>
 </head>
 <body>
@@ -258,28 +644,169 @@
             <div class="badge">✦ OFFICIAL APPS HUB ✦</div>
         </div>
 
-        <!-- Available Now -->
+        <!-- ===== POWERCUT EDITOR - FEATURED ===== -->
         <div class="section-title">✅ Available Now</div>
 
-        <!-- PowerCut Editor -->
-        <div class="app-card">
-            <div class="app-top">
-                <div class="app-icon" style="background: linear-gradient(135deg, #FF6B35, #E64A19);">🎬</div>
-                <div class="app-info">
-                    <div class="app-name">PowerCut Editor <span class="version">v2.1.0</span></div>
-                    <div class="app-desc">CapCut-Level Professional Video Editor with 30+ effects, multi-layer timeline, slow-mo & more</div>
+        <div class="featured-card">
+            <div class="featured-header">
+                <div class="featured-top">
+                    <div class="featured-icon">🎬</div>
+                    <div>
+                        <div class="featured-name">PowerCut Editor</div>
+                        <div class="featured-version">🚀 v2.1.0 — Latest Release</div>
+                    </div>
+                </div>
+                <div class="featured-desc">
+                    CapCut-Level Professional Video Editor — 30+ super effects, multi-layer timeline, slow motion, AI upscale & export up to 8K. Built with Kotlin & Jetpack Compose.
                 </div>
             </div>
-            <div class="app-tags">
-                <span class="tag">Video Editor</span>
-                <span class="tag">CapCut Level</span>
-                <span class="tag">Kotlin</span>
-                <span class="status-live">LIVE</span>
+
+            <!-- Screenshots -->
+            <div class="screenshots-wrapper">
+                <div class="screenshots-row">
+                    <!-- Screen 1 - Timeline -->
+                    <div class="screenshot">
+                        <div class="screenshot-inner scr-home">
+                            <div class="scr-topbar">
+                                <span class="scr-title">🎬 PowerCut</span>
+                                <span class="scr-dots">⋮</span>
+                            </div>
+                            <div class="scr-preview">
+                                <span style="z-index:1; font-size:16px;">🎬</span>
+                            </div>
+                            <div class="scr-timeline">
+                                <div class="scr-track scr-track-vid">🎬 Video</div>
+                                <div class="scr-track scr-track-aud">🔊 Audio</div>
+                                <div class="scr-track scr-track-txt">📝 Text</div>
+                                <div class="scr-track scr-track-fx">✨ FX</div>
+                            </div>
+                            <div class="scr-controls">⏮ ▶️ ⏭ ✂️</div>
+                            <div class="screenshot-label">Timeline</div>
+                        </div>
+                    </div>
+
+                    <!-- Screen 2 - Effects -->
+                    <div class="screenshot">
+                        <div class="screenshot-inner scr-effects">
+                            <div class="scr-label">✨ 30+ Super Effects</div>
+                            <div class="scr-grid">
+                                <div class="scr-fx-item" style="background: linear-gradient(135deg, #FF6B35, #E64A19);">🔥</div>
+                                <div class="scr-fx-item" style="background: linear-gradient(135deg, #7C5CFF, #A800FF);">💜</div>
+                                <div class="scr-fx-item" style="background: linear-gradient(135deg, #00F0FF, #0072FF);">💎</div>
+                                <div class="scr-fx-item" style="background: linear-gradient(135deg, #FFD700, #FF9800);">⚡</div>
+                                <div class="scr-fx-item" style="background: linear-gradient(135deg, #E91E63, #9C27B0);">🌸</div>
+                                <div class="scr-fx-item" style="background: linear-gradient(135deg, #4CAF50, #00BCD4);">🌊</div>
+                                <div class="scr-fx-item" style="background: linear-gradient(135deg, #FF5722, #795548);">🎭</div>
+                                <div class="scr-fx-item" style="background: linear-gradient(135deg, #607D8B, #455A64);">🪩</div>
+                                <div class="scr-fx-item" style="background: linear-gradient(135deg, #F44336, #B71C1C);">❤️‍🔥</div>
+                            </div>
+                            <div class="screenshot-label">Effects</div>
+                        </div>
+                    </div>
+
+                    <!-- Screen 3 - Export -->
+                    <div class="screenshot">
+                        <div class="screenshot-inner scr-export">
+                            <div class="scr-label">📤 Export Options</div>
+                            <div class="scr-format">
+                                <div class="scr-format-item active">📹 MP4-HD <span>✓</span></div>
+                                <div class="scr-format-item">🎬 4K Ultra</div>
+                                <div class="scr-format-item">🌟 8K</div>
+                                <div class="scr-format-item">🌐 WebM</div>
+                                <div class="scr-format-item">🎞️ GIF</div>
+                            </div>
+                            <div class="scr-quality">
+                                <div class="scr-q">1x</div>
+                                <div class="scr-q active">2x AI</div>
+                                <div class="scr-q">4x Ultra</div>
+                            </div>
+                            <div class="scr-export-btn">⬆️ Export Video</div>
+                            <div class="screenshot-label">Export</div>
+                        </div>
+                    </div>
+
+                    <!-- Screen 4 - Speed -->
+                    <div class="screenshot">
+                        <div class="screenshot-inner scr-speed">
+                            <div class="scr-label">⚡ Speed Control</div>
+                            <div class="scr-speed-circle">0.5x</div>
+                            <div class="scr-speed-labels">
+                                <span>0.1x</span>
+                                <span>1x</span>
+                                <span>16x</span>
+                            </div>
+                            <div class="scr-speed-bar">
+                                <div class="scr-speed-fill"></div>
+                                <div class="scr-speed-dot"></div>
+                            </div>
+                            <div style="margin-top:12px; font-size:8px; color:#666;">🐌 Slow Motion</div>
+                            <div style="display:flex; gap:4px; margin-top:4px; width:100%;">
+                                <div style="flex:1; padding:5px; background:rgba(255,107,53,0.1); border:1px solid rgba(255,107,53,0.2); border-radius:6px; text-align:center; font-size:7px; color:#FF6B35; font-weight:700;">Ultra</div>
+                                <div style="flex:1; padding:5px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:6px; text-align:center; font-size:7px; color:#666;">Super</div>
+                                <div style="flex:1; padding:5px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:6px; text-align:center; font-size:7px; color:#666;">Smooth</div>
+                            </div>
+                            <div class="screenshot-label">Speed</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a href="https://github.com/Salmanlaghari/PowerCut-Editor/releases/download/v2.1.0/app-release.apk" class="btn-download btn-active">
-                <span class="btn-icon">⬇️</span> Download APK
-            </a>
+
+            <!-- File Info -->
+            <div class="file-info">
+                <div class="file-info-item">📄 <strong>app-release.apk</strong></div>
+                <div class="file-info-item">💾 <strong>~72.8 MB</strong></div>
+                <div class="file-info-item">📅 <strong>Jul 29, 2026</strong></div>
+                <div class="file-info-item">📱 <strong>Android 8.0+</strong></div>
+            </div>
+
+            <!-- Features -->
+            <div class="featured-features">
+                <span class="feat-pill">✂️ Edit Panel</span>
+                <span class="feat-pill">📑 Multi-Layer</span>
+                <span class="feat-pill">✨ 30+ Effects</span>
+                <span class="feat-pill">🔄 30 Transitions</span>
+                <span class="feat-pill">📋 20 Templates</span>
+                <span class="feat-pill">🐌 Slow-Mo</span>
+                <span class="feat-pill">⚡ 0.1x—16x</span>
+                <span class="feat-pill">🧊 Freeze</span>
+                <span class="feat-pill">🔄 Reverse</span>
+                <span class="feat-pill">📝 Scrolling Text</span>
+                <span class="feat-pill">🖼️ Image Overlay</span>
+                <span class="feat-pill">🎵 Beat Sync</span>
+                <span class="feat-pill">📤 8K Export</span>
+                <span class="feat-pill">🤖 2x/4x AI Upscale</span>
+                <span class="feat-pill">🎭 20 3D Masks</span>
+                <span class="feat-pill">⭐ 12 Stickers</span>
+                <span class="feat-pill">🎨 Adjust</span>
+                <span class="feat-pill">📐 Crop</span>
+                <span class="feat-pill">🔄 Transform</span>
+            </div>
+
+            <!-- Changelog -->
+            <div class="featured-changelog">
+                <div class="changelog-title">📋 What's New in v2.1.0</div>
+                <div class="changelog-items">
+                    <div class="changelog-item"><span class="ci-icon">✅</span> Full Edit Panel — Adjust, Crop, Transform, Speed, Slow-Mo, Reverse, Freeze</div>
+                    <div class="changelog-item"><span class="ci-icon">✅</span> Multi-Layer Timeline — Video, Audio, Text, Image, Sticker, Effect tracks</div>
+                    <div class="changelog-item"><span class="ci-icon">✅</span> 30+ Super Effects & 30 Transitions with live preview</div>
+                    <div class="changelog-item"><span class="ci-icon">✅</span> 20 Templates for quick video creation</div>
+                    <div class="changelog-item"><span class="ci-icon">✅</span> Scrolling/Marquee Text with custom styles</div>
+                    <div class="changelog-item"><span class="ci-icon">✅</span> Export: MP4-HD, 4K, 8K, WebM, GIF with AI Upscale</div>
+                    <div class="changelog-item"><span class="ci-icon">✅</span> 20 3D Masks & 12 Stickers</div>
+                    <div class="changelog-item"><span class="ci-icon">✅</span> Song Picker & Beat Sync for music videos</div>
+                    <div class="changelog-item"><span class="ci-icon">✅</span> Image Overlay with opacity control</div>
+                </div>
+            </div>
+
+            <!-- Download -->
+            <div class="featured-download">
+                <a href="https://github.com/Salmanlaghari/PowerCut-Editor/releases/download/v2.1.0/app-release.apk" class="btn-download btn-featured">
+                    <span class="btn-icon">⬇️</span> Download PowerCut v2.1.0 APK
+                </a>
+            </div>
         </div>
+
+        <!-- ===== OTHER APPS ===== -->
 
         <!-- SpellType Keyboard -->
         <div class="app-card">
@@ -426,7 +953,7 @@
             </button>
         </div>
 
-        <!-- Pulse Music -->
+        <!-- Pulse Music Player AI -->
         <div class="app-card">
             <div class="app-top">
                 <div class="app-icon" style="background: linear-gradient(135deg, #3F51B5, #2196F3);">🎵</div>
