@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerCut Editor - Download | Team PK AI</title>
+    <meta name="description" content="Download PowerCut Editor v2.1.0 - CapCut-Level Professional Video Editor with Green Screen, Eraser Tools, Image Editor, 30+ Effects, Multi-Layer Timeline, 8K Export. Free Android APK.">
+    <meta name="keywords" content="PowerCut Editor, Video Editor, CapCut Alternative, Green Screen, Chroma Key, Android Video Editor, Free APK, Video Effects, Multi-Layer Timeline">
+    <meta property="og:title" content="PowerCut Editor - Professional Video Editor">
+    <meta property="og:description" content="CapCut-Level Video Editor with Green Screen, Eraser, Image Editor, 30+ Effects. Free Download.">
+    <meta property="og:type" content="application">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #010410;
+            color: #fff;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 16px;
+        }
+        .header {
+            text-align: center;
+            padding: 30px 0;
+        }
+        .app-icon {
+            width: 100px; height: 100px;
+            background: linear-gradient(135deg, #FF6B35, #E64A19);
+            border-radius: 24px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 48px;
+            box-shadow: 0 10px 40px rgba(255,107,53,0.3);
+        }
+        .app-title { font-size: 28px; font-weight: 900; }
+        .app-subtitle { color: #9CA3AF; font-size: 13px; margin-top: 4px; }
+        .version-badge {
+            display: inline-block;
+            background: rgba(255,107,53,0.15);
+            border: 1px solid rgba(255,107,53,0.3);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #FF6B35;
+            margin-top: 8px;
+        }
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #FF6B35, #E64A19);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 800;
+            text-decoration: none;
+            margin: 20px 0;
+            box-shadow: 0 8px 30px rgba(255,107,53,0.3);
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .info-card {
+            background: rgba(13,16,38,0.8);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 14px;
+            text-align: center;
+        }
+        .info-card .label { font-size: 10px; color: #9CA3AF; font-weight: 600; }
+        .info-card .value { font-size: 16px; font-weight: 800; margin-top: 4px; }
+        .section-title {
+            font-size: 16px;
+            font-weight: 800;
+            margin: 24px 0 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255,107,53,0.3), transparent);
+        }
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: rgba(13,16,38,0.6);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 12px;
+            padding: 12px;
+        }
+        .feature-icon { font-size: 20px; flex-shrink: 0; }
+        .feature-text { font-size: 12px; color: #ccc; line-height: 1.5; }
+        .feature-text strong { color: #fff; }
+        .changelog {
+            background: rgba(13,16,38,0.8);
+            border: 1px solid rgba(255,107,53,0.1);
+            border-radius: 16px;
+            padding: 16px;
+            margin: 20px 0;
+        }
+        .changelog-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 11px;
+            color: #ccc;
+            margin-bottom: 6px;
+        }
+        .screenshots {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px 0;
+            scrollbar-width: none;
+        }
+        .screenshots::-webkit-scrollbar { display: none; }
+        .screenshot {
+            width: 160px;
+            min-width: 160px;
+            height: 320px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0a2e, #0d0520);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            border: 1px solid rgba(255,107,53,0.15);
+        }
+        .market-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .market-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(13,16,38,0.8);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
+            padding: 14px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .market-icon { font-size: 24px; }
+        .market-name { font-size: 14px; font-weight: 700; }
+        .market-desc { font-size: 10px; color: #9CA3AF; }
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #6B7280;
+            font-size: 11px;
+        }
+        .footer a { color: #FF6B35; text-decoration: none; font-weight: 700; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">🎬</div>
+            <div class="app-title">PowerCut Editor</div>
+            <div class="app-subtitle">CapCut-Level Professional Video Editor</div>
+            <div class="version-badge">🚀 v2.1.0 — Latest Release</div>
+        </div>
+
+        <a href="https://github.com/Salmanlaghari/PowerCut-Editor/releases/download/v2.1.0/app-release.apk" class="download-btn">
+            ⬇️ Download APK (61.7 MB)
+        </a>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="label">Version</div>
+                <div class="value">v2.1.0</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Size</div>
+                <div class="value">~62 MB</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Android</div>
+                <div class="value">8.0+</div>
+            </div>
+            <div class="info-card">
+                <div class="label">Updated</div>
+                <div class="value">Jul 29, 2026</div>
+            </div>
+        </div>
+
+        <div class="section-title">📸 Screenshots</div>
+        <div class="screenshots">
+            <div class="screenshot" style="background: linear-gradient(135deg, #FF6B35, #E64A19);">🎬</div>
+            <div class="screenshot" style="background: linear-gradient(135deg, #7C5CFF, #A800FF);">✂️</div>
+            <div class="screenshot" style="background: linear-gradient(135deg, #00F0FF, #0072FF);">🎨</div>
+            <div class="screenshot" style="background: linear-gradient(135deg, #4CAF50, #00BCD4);">📐</div>
+        </div>
+
+        <div class="section-title">✨ Features</div>
+        <div class="feature-list">
+            <div class="feature-item">
+                <div class="feature-icon">🎬</div>
+                <div class="feature-text"><strong>Green Screen / Chroma Key</strong> — Remove green/blue/black backgrounds. 30+ auto backgrounds (Nature, Studio, Creative, Gradient). Adjustable threshold.</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🧹</div>
+                <div class="feature-text"><strong>Eraser Tools</strong> — Background eraser, Object eraser, Area eraser. Brush size 5-100px, tolerance control, soft edge blending.</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🖌️</div>
+                <div class="feature-text"><strong>Image Editor</strong> — 12 adjustments: Brightness, Contrast, Saturation, Exposure, Highlights, Shadows, Temperature, Blur, Sharpen, Vignette, Grain, Fade.</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📐</div>
+                <div class="feature-text"><strong>Orientation Tools</strong> — Vertical (9:16) for TikTok/Reels/Shorts. Horizontal (16:9) for YouTube. Square (1:1) for Instagram. AI Auto Reframe.</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✂️</div>
+                <div class="feature-text"><strong>Edit Panel</strong> — Adjust, Crop, Speed (0.1x-16x), Slow Motion, Reverse, Freeze, Delete. Multi-layer timeline.</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">✨</div>
+                <div class="feature-text"><strong>30+ Effects</strong> — Super effects, 30 transitions, 20 templates, 12 stickers, 20 3D masks, scrolling text, beat sync.</div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">📤</div>
+                <div class="feature-text"><strong>Export</strong> — MP4-HD, 4K, 8K, WebM, GIF. AI Upscale (2x, 4x). Auto-retry with lower resolution if fails.</div>
+            </div>
+        </div>
+
+        <div class="section-title">📋 What's New</div>
+        <div class="changelog">
+            <div class="changelog-item">✅ Green Screen / Chroma Key with 30+ Auto Backgrounds</div>
+            <div class="changelog-item">✅ Eraser Tools — Background, Object & Area Eraser</div>
+            <div class="changelog-item">✅ Image Editor — 12 adjustments</div>
+            <div class="changelog-item">✅ Orientation — Vertical, Horizontal, Square presets</div>
+            <div class="changelog-item">✅ AI Auto Reframe, Safe Zone, Letterbox</div>
+            <div class="changelog-item">✅ Smooth splash animation</div>
+            <div class="changelog-item">✅ Full storage permissions (Android 11/12/13+)</div>
+            <div class="changelog-item">✅ Export storage fix + auto-retry</div>
+        </div>
+
+        <div class="section-title">🏪 Available On</div>
+        <div class="market-links">
+            <a href="https://github.com/Salmanlaghari/PowerCut-Editor/releases/download/v2.1.0/app-release.apk" class="market-link">
+                <div class="market-icon">🐙</div>
+                <div>
+                    <div class="market-name">GitHub Releases</div>
+                    <div class="market-desc">Direct APK download — Latest v2.1.0</div>
+                </div>
+            </a>
+            <a href="https://www.uptodown.com/developers-console" class="market-link" target="_blank">
+                <div class="market-icon">📱</div>
+                <div>
+                    <div class="market-name">Uptodown</div>
+                    <div class="market-desc">100M+ monthly users — Submit free</div>
+                </div>
+            </a>
+            <a href="https://apkpure.com/developer" class="market-link" target="_blank">
+                <div class="market-icon">📦</div>
+                <div>
+                    <div class="market-name">APKPure</div>
+                    <div class="market-desc">Global APK marketplace — Submit free</div>
+                </div>
+            </a>
+            <a href="https://www.amazon.com/gp/mas/get/amazonapp" class="market-link" target="_blank">
+                <div class="market-icon">🛒</div>
+                <div>
+                    <div class="market-name">Amazon AppStore</div>
+                    <div class="market-desc">Free developer registration</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>Developed with ❤️ by <a href="https://github.com/Salmanlaghari">Team PK AI</a></p>
+            <p style="margin-top: 6px;">© 2026 Team PK AI — All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+</html>
