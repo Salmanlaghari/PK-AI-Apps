@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://salmanlaghari.github.io/PK-AI-Apps/sitemap.xml
